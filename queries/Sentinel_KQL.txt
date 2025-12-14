@@ -1,0 +1,27 @@
+=============== MAP ===============
+FAILED_RDP_WITH_GEO_CL
+| extend
+    Latitude = toreal(extract("latitude:([0-9.-]+)", 1, RawData)),
+    Longitude = toreal(extract("longitude:([0-9.-]+)", 1, RawData)),
+    SourceHost = extract("source_host:([^,]+)", 1, RawData),
+    Country = extract("country:([^,]+)", 1, RawData),
+    Label = extract("label:([^,]+)", 1, RawData)
+| where isnotempty(Latitude) and isnotempty(Longitude)
+| summarize EventCount=count() by SourceHost, Latitude, Longitude, Country, Label
+
+
+
+=============== TOP 5 USERNAMES =============
+FAILED_RDP_WITH_GEO_CL
+| extend Username = extract("username:([^,]+)", 1, RawData)
+| summarize usernameCount = count() by Username 
+| top 5 by usernameCount
+| render barchart
+
+
+=============== TOP 5 COUNTRYS =======================
+FAILED_RDP_WITH_GEO_CL
+| extend Country = extract("country:([^,]+)", 1, RawData)
+| summarize countryCount = count() by Country 
+| top 5 by countryCount
+| render barchart
