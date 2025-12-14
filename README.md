@@ -22,15 +22,15 @@ Implementação de um SIEM (Microsoft Sentinel) no Azure conectado a um Honeypot
 4. **Alerta:** Logic App deteta picos de ataque e envia detalhes via Webhook para o n8n/Telegram.
 
 ## Visualizações
-# Mapa de Ataques
+### Mapa de Ataques
 ![Mapa de Ataques](screenshots/world_map_attack.png)
-# Sentinel Dashboard
+### Sentinel Dashboard
 ![Sentinel Dashboard](screenshots/sentinel_dashboard.png)
-# Telegram Alert
+### Telegram Alert
 ![Telegram Alert](screenshots/telegram_alert.png)
-# Top 5 Username
+### Top 5 Username
 ![Top 5 Username](screenshots/UsernameCount.png)
-# Top 5 Country
+### Top 5 Country
 ![Top 5 Country](screenshots/CountryCount.png)
-# Mapa de Ataques
+### Mapa de Ataques
 ![Attacks per Hour](screenshots/AttacksPerHour.png)
