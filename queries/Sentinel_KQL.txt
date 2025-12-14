@@ -25,3 +25,9 @@ FAILED_RDP_WITH_GEO_CL
 | summarize countryCount = count() by Country 
 | top 5 by countryCount
 | render barchart
+
+
+=============== ATTACKS PER HOUR  =======================
+FAILED_RDP_WITH_GEO_CL
+| summarize AttacksPerHour = count() by bin(TimeGenerated, 1h)
+| render timechart 
